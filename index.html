@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="./styles.css" />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <title>Тестовое задание</title>
+</head>
+
+<body>
+    <header class="header">
+        <img class="header__logo" src="Слой 2.svg" alt="Логотип банка в виде планеты">
+        <div class="header__container">
+            <p class="header__text">8-800-100-5005</p>
+            <p class="header__text">+7 (3452) 522-000</p>
+        </div>
+    </header>
+    <main>
+        <nav class="main-navigation">
+            <ul class="main-navigation__items">
+                <li class="main-navigation__item"><a href="#credit-card" class="main-navigation__link">Кредитные
+                        карты</a></li>
+                <li class="main-navigation__item"><a href="#deposit" class="main-navigation__link">Вклады</a></li>
+                <li class="main-navigation__item"><a href="#debit-card " class="main-navigation__link">Дебетовая
+                        карта</a></li>
+                <li class="main-navigation__item"><a href="#insurance" class="main-navigation__link">Страхование</a>
+                </li>
+                <li class="main-navigation__item"><a href="#friends" class="main-navigation__link">Друзья</a></li>
+                <li class="main-navigation__item"><a href="#internet-bank"
+                        class="main-navigation__link">Интернет-банк</a></li>
+            </ul>
+        </nav>
+        <section class="adress">
+            <div class="adress__container">
+                <a href="" class="adress__link">Главная</a>
+                <p> - </p>
+                <a href="" class="adress__link">Вклады</a>
+                <p> - </p>
+                <a href="" class="adress__link">Калькулятор</a>
+            </div>
+        </section>
+        <section class="calcutator">
+            <div class="calculator__container">
+                <h2 class="calcutator__title">Калькулятор</h2>
+                <div class="calculator__form-container">
+                    <form class="calculator__form" action="calc.php" method="POST">
+                        <div class="calculator__input">
+                            <p class="calculator__text">Дата оформления вклада</p>
+                            <input placeholder="дд.мм.гггг" type="text" id="datepicker">
+                        </div>
+                        <div class="calculator__input">
+                            <p class="calculator__text">Сумма вклада</p>
+                            <input type="number" min="10000" max="3000000" value="10000" id="summ">
+                        </div>
+                        <div class="calculator__input">
+                            <p class="calculator__text">Срок вклада</p>
+                            <select id="calculator-years" id="years">
+                                <option value="1 year">1 год</option>
+                                <option value="2 year">2 года</option>
+                                <option value="3 year">3 года</option>
+                                <option value="4 year">4 года</option>
+                                <option value="5 year">5 лет</option>
+                            </select>
+                        </div>
+                        <div class="calculator__input">
+                            <p class="calculator__text">Пополнение вклада</p>
+                            <div>
+                                <input type="radio" id="contactChoice1" value="No" checked>
+                                <label for="contactChoice1">Нет</label>
+                                <input type="radio" id="contactChoice2" value="Yes">
+                                <label for="contactChoice2">Да</label>
+                            </div>
+                        </div>
+                        <div class="calculator__input">
+                            <p class="calculator__text">Сумма пополнения вклада</p>
+                            <input class="" type="number" min="10000" max="3000000" value="10000" id="summadd">
+                        </div>
+                        <div class="calculator__input">
+                            <div class="button__container">
+                                <button class="calculator__button" type="button"
+                                    onClick="getdetails()">Рассчитать</button>
+                                <p>Результат:</p>
+                            </div>
+                            <p id="msg">10 250 руб</p>
+                        </div>
+                    </form>
+                    <div class="calculator__sliders">
+                        <div class="slidecontainer">
+                            <input type="range" min="1000" max="3000000" value="50" class="slider" id="myRange">
+                        </div>
+                        <div class="slidecontainer">
+                            <input type="range" min="1000" max="3000000" value="50" class="slider" id="myRange">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="footer__navigation">
+            <ul class="footer-navigation__items">
+                <li><a href="#credit-card" class="footer-navigation__item">Кредитные карты</a></li>
+                <li><a href="#deposit" class="footer-navigation__item">Вклады</a></li>
+                <li><a href="#debit-card " class="footer-navigation__item">Дебетовая карта</a></li>
+                <li><a href="#insurance" class="footer-navigation__item">Страхование</a></li>
+                <li><a href="#friends" class="footer-navigation__item">Друзья</a></li>
+                <li><a href="#internet-bank" class="footer-navigation__item">Интернет-банк</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+<script src="script.js"></script>
+
+</html>
